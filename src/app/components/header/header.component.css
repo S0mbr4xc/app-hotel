@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); /* Fuente con un toque clásico */
+
+.header-container {
+  font-family: 'Merriweather', serif; /* Uso de una fuente clásica */
+  background-color: #6c2b2b; /* Fondo rojo oscuro para combinar con el logo */
+  color: #FFF4D9; /* Texto en color crema */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.logo img {
+  width: 80px; /* Tamaño del logo ajustado */
+  border-radius: 5%; /* Bordes levemente redondeados en el logo */
+}
+
+h1 {
+  margin: 0 20px;
+  font-size: 2.4em; /* Tamaño ligeramente ajustado para la fuente */
+  color: #FFF4D9; /* Manteniendo el color crema */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #FFF4D9; /* Enlaces en color crema para combinar */
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease-in-out; /* Transición suave */
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #FFD700; /* Cambio a color amarillo al pasar el mouse */
+}
