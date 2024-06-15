@@ -1,15 +1,33 @@
 <header>
   <div class="header-container">
-    <div class="logo">
-      <img src="../../../assets/LogoMorlaco.png" alt="Logo de Morlaco"> <!-- Asegúrate de cambiar la ruta del logo si es necesario -->
+    <div class="hamburger" (click)="toggleMenu()">
+      &#x2630;
     </div>
-    <h1>Morlaco</h1>
+
+    <div class="menu-movile" [class.active]="menuOpen">
+      <div class="hamburger" (click)="toggleMenu()">&#x2630;</div>
+      @for (link of paginas; track link.path){
+        <a href="#" routerLink="{{link.path}}"><button class="boton">{{link.titulo}}</button></a>
+      }
+      <div class="redes">
+        <a href="https://www.facebook.com/hotelelmorlaco" target="_blank"><img src="../../../assets/facebook.png" alt="Facebook" class="logos"></a>
+        <a href="https://wa.me/+593979088200" target="_blank"><img src="../../../assets/whatsapp_logo_icon_147205.png" alt="WhatsApp" class="logos"></a>
+        <a href="https://www.instagram.com/hotelelmorlaco/" target="_blank"><img src="../../../assets/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram" class="logos"></a>
+      </div>
+    </div>
+
+    <div class="logo">
+      <a routerLink="inicio"><img src="../../../assets/LogoMorlaco.png" alt="Logo de Morlaco"></a>
+    </div>
+
+    <h1>Morlacos</h1>
+
     <nav>
-      <ul>
-        <li><a href="#actividades">Actividades</a></li>
-        <li><a href="#recomendaciones">Recomendaciones</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
+      <div class="menu-comun">
+        @for (link of paginas; track link.path){
+          <a routerLink="{{link.path}}"><button class="boton">{{link.titulo}}</button></a>
+        }
+      </div>
     </nav>
   </div>
 </header>

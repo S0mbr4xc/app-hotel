@@ -1,47 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); /* Fuente con un toque clásico */
-
 .header-container {
-  font-family: 'Merriweather', serif; /* Uso de una fuente clásica */
-  background-color: #6c2b2b; /* Fondo rojo oscuro para combinar con el logo */
-  color: #FFF4D9; /* Texto en color crema */
-  padding: 10px 20px;
+  background-color: #6c2b2b;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+  padding: 0.5rem 1rem;
+}
+
+.hamburger {
+  cursor: pointer;
+  font-size: 2rem;
+  display: block; /* Asegúrate de que el botón del menú siempre esté visible en móviles */
+}
+
+.menu-movile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Anchura fija para el menú lateral */
+  height: 100vh;
+  background-color: #6c2b2b;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+}
+
+.menu-movile.active {
+  transform: translateX(0);
+}
+
+.menu-movile a {
+  text-decoration: none;
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.menu-movile .boton, .menu-comun .boton {
+  background-color: #6c2b2b;
+  color: white;
+  border: none;
+  padding: 15px 20px; /* Aumenta el padding para un mejor tacto */
+  width: 100%; /* Ocupa todo el ancho del menú */
+  text-align: left; /* Alinea el texto a la izquierda */
+  cursor: pointer;
+  font-size: 1.1rem; /* Aumenta el tamaño de la fuente para mejor legibilidad */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-movile .boton:hover, .menu-comun .boton:hover {
+  background-color: #FFF4D9; /* Color de resaltado al hacer hover */
+  border-radius: 10px;
+  color: #6c2b2b; /* Cambia el color del texto al hacer hover */
 }
 
 .logo img {
-  width: 80px; /* Tamaño del logo ajustado */
-  border-radius: 5%; /* Bordes levemente redondeados en el logo */
+  height: 100px; /* Aumenta el tamaño del logo para hacerlo más vistoso */
 }
 
-h1 {
-  margin: 0 20px;
-  font-size: 2.4em; /* Tamaño ligeramente ajustado para la fuente */
-  color: #FFF4D9; /* Manteniendo el color crema */
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
+nav .menu-comun {
   display: flex;
-  margin: 0;
+  width: 100%; /* Asegura que el menú común use todo el ancho disponible */
 }
 
-nav ul li {
-  margin-right: 20px;
+.redes {
+  display: flex;
+  justify-content: center; /* Centra los íconos horizontalmente */
+  align-items: center; /* Alinea los íconos verticalmente */
+  flex-direction: column; /* Organiza los íconos en una columna */
+  gap: 10px; /* Espacio entre cada ícono */
+  padding: 10px; /* Espacio interior del contenedor */
+  background-color: #f4f4f4; /* Color de fondo del contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
 }
 
-nav ul li a {
-  color: #FFF4D9; /* Enlaces en color crema para combinar */
-  text-decoration: none;
-  font-size: 1.2em;
-  transition: color 0.3s ease-in-out; /* Transición suave */
+.logos {
+  width: 50px;
+  transition: transform 0.3s ease; /* Transición suave al cambiar el tamaño */
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
-  color: #FFD700; /* Cambio a color amarillo al pasar el mouse */
+.logos:hover {
+  transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el ratón */
+}
+
+
+@media (min-width: 768px) {
+  .menu-movile {
+    display: none; /* Oculta el menú lateral en dispositivos más grandes */
+  }
+  .menu-comun {
+    display: flex; /* Muestra el menú común solo en dispositivos más grandes */
+  }
+  .hamburger {
+    display: none; /* Oculta el botón de hamburguesa en dispositivos grandes */
+  }
+
+  a{
+    margin-inline: 5px;
+  }
+
+  .logo img {
+    height: 150px; /* Incrementa aún más el tamaño del logo en dispositivos más grandes */
+  }
+}
+
+@media (max-width: 767px) {
+  nav{
+    display: none;
+  }
+
+  .header-container{
+    justify-content: flex-start;
+  }
+
+  .logo{
+    margin-inline: 20px;
+  }
+  
 }
